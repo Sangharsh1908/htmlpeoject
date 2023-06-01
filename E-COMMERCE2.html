@@ -1,0 +1,803 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Ecommerce</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        /*common css*/
+        .container_flued {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .container {
+            max-width: 1150px;
+            width: 100%;
+            /*height: 60px;*/
+            /* background-color: blue;*/
+        }
+        .title {
+            font-size: 40px;
+            font-family: Segoe UI;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 30px;
+
+        }
+        .header {
+            height: 70px;
+            background-color: rgba(0,0,0,0.5);
+            font-family: Segoe UI;
+            position: fixed;
+            top: 0px;
+            z-index: 99;
+        }
+        .header-container {
+            height: 70px;
+            /*background-color: blue;*/
+            display: flex;
+            justify-content: space-between;
+        }
+        .logo {
+            height: 70px;
+            width: 800px;
+            /*background-color: yellow;*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .navigation {
+            width: 60%;
+            height: 70px;
+            /*background-color: brown;*/
+        }
+        .logo_title {
+            font-size: 20px;
+            text-transform: uppercase;
+            color: white;
+
+        }
+        .logo_title1 {
+            position: absolute;
+            left: 30px;
+        }
+        .header_btn {
+            border: 1px solid #e07e22;
+            color: #e07e22 !important;
+            padding: 6px 15px;
+            font-size: 9px !important;
+            border-radius: 5px;
+            background-color: transparent;
+        }
+        .header_btn:hover {
+            border-block: 1px solid #e07e22;
+            background-color: #e07e22;
+            color: white !important;
+        }
+        .logo_title>span {
+            color: #e07e22;
+        }
+        .logo_title>span2 {
+            color: green;
+        }
+        .navigation>ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            /* margin: 10px 10px;*/
+
+        }
+        .navigation>ul>li {
+            cursor: pointer;
+            font-size: 12px;
+            color: white;
+        }
+        .home {
+            /*position: absolute;*/
+            /*left: 625px;*/
+        }
+        .banner {
+            height: 700px;
+            /* background-color: red;*/
+            background-image: url('./shop.jpeg');
+            background-size: cover;
+            background-position-y: 100px;
+            position: relative;
+            overflow: hidden;
+
+            background-repeat: no-repeat;
+        }
+        .banner-container {
+            height: 620px;
+            /*  background-color: blue;*/
+            display: flex;
+            align-items: center;
+        }
+        .banner-info {
+            /*height: 200px;*/
+            width: 35%;
+            background-color: red;
+            position: absolute;
+            z-index: 2;
+        }
+        .banner-info>h1 {
+            font-size: 25px;
+            font-family: Segoe UI;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+        .banner-btn {
+            border: 1px solid white;
+            background-color: transparent;
+            padding: 15px 30px;
+            color: white;
+            font-size: 16px;
+            margin-right: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .banner-btn:hover {
+            border: 1px solid green;
+            background-color: #14bb19;
+        }
+        .banner-bg {
+            width: 50%;
+            height: 420px;
+            background-color: orange;
+            position: absolute;
+            left: 0px;
+
+            z-index: 1;
+            transform: rotate(30deg);
+        }
+        .product {
+            /* height: 500px;*/
+            background-color: #e3e3e3;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        .card-container {
+            width: 100%;
+            /* height: 400px;*/
+            /* background-color: yellow;*/
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            row-gap: 30px;
+        }
+        .items {
+            height: 350px;
+            width: 22%;
+            background-color: brown;
+            background-size: cover;
+            background-position: border-box;
+            display: flex;
+            align-items: flex-end;
+            border-radius: 7px;
+            overflow: hidden;
+
+        }
+        li:hover {
+            background-color: transparent;
+            border: 1px solid green;
+            border-radius: 5px;
+            padding: 30px;
+        }
+        .items:nth-child(1) {
+            background-image: url('./pro_1.jpeg');
+        }
+        .items:nth-child(2) {
+            background-image: url('./pro_2.jpeg');
+        }
+        .items:nth-child(3) {
+            background-image: url('./pro_3.jpeg');
+        }
+        .items:nth-child(4) {
+            background-image: url('pro_4.jpeg');
+        }
+        .items:nth-child(5) {
+            background-image: url('./pro_5.jpeg');
+        }
+        .items:nth-child(6) {
+            background-image: url('./pro_6.jpeg');
+        }
+        .items:nth-child(7) {
+            background-image: url('./pro_7.jpeg');
+        }
+        .items:nth-child(8) {
+            background-image: url('./pro_8.jpeg');
+        }
+
+        .item_deatails {
+            height: 120px;
+            width: 100%;
+            background-color: rgba(0,0,0,0.7);
+            padding: 20px;
+            box-sizing: border-box;
+            transition: .3s;
+            cursor: pointer;
+        }
+        .item_deatails:hover {
+            height: 350px;
+        }
+        .item_deatails>h1 {
+            color: white;
+            font-family: Segoe UI;
+            font-weight: 400;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .item_deatails>p {
+            color: #b6b6b6;
+        }
+        /*trending section*/
+        .gallary {
+            height: 30vh;
+            /* background-color: yellow;*/
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 0px;
+            transition: .4s;
+
+        }
+        .gal_1 {
+            background-color: yellow;
+        }
+        .gal_2 {
+            background-color: brown;
+            left: 25%;
+        }
+        .gal_3 {
+            background-color: pink;
+            left: 50%;
+        }
+        .gal_4 {
+            background-color: green;
+            left: 75%;
+        }
+        .gal_4:hover {
+            left: 0px;
+        }
+        .gal_3:hover {
+            left: 0px;
+        }
+        .gal_3:hover~.gal_4 {
+            left: 100%;
+        }
+        .gal_2:hover {
+            left: 0px;
+        }
+        .gal_2:hover~.gal_4 {
+            left: 100%;
+        }
+        .gal_2:hover~.gal_3 {
+            left: 100%;
+        }
+        .gal_1:hover~.gal_4 {
+            left: 100%;
+        }
+        .gal_1:hover~.gal_3 {
+            left: 100%;
+        }
+        .gal_1:hover~.gal_2 {
+            left: 100%;
+        }
+
+
+
+
+        .trending {
+            height: 30vh;
+            background-color: red;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+        .gal_img {
+            height: 20vh;
+            width: 25%;
+            /*background-color: brown;*/
+            display: flex;
+            justify-content: center;
+        }
+        .gal_img>img {
+            height: 100%;
+        }
+        .gal_details {
+            height: 15vh;
+            width: 60%;
+            padding: 20px 50px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .gal_details>h2 {
+            font-size: 50px;
+            font-family: Segoe UI;
+            font-weight: bold;
+            line-height: 50px;
+            margin-bottom: 15px;
+        }
+        .gal_details>p {
+            font-size: 16px;
+            font-family: Segoe UI;
+            margin-bottom: 15px;
+        }
+        .gal_details>button {
+            padding: 13px 30px;
+            border: 1px solid black;
+            color: black;
+            background-color: transparent;
+            font-size: 17px;
+            border-radius: 10px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        /*form section*/
+        .form {
+            /*height: 500px;*/
+            background-image: url('./s_bag.jpeg');
+            background-size: cover;
+            background-position: bottom;
+        }
+        .form_container {
+            /*height:650px;*/
+            width: 100%;
+            background-color: rgba(0,0,0,0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 0px;
+        }
+        .form_container>h1 {
+            color: white;
+        }
+        .from_input {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            font-family: Segoe UI;
+
+        }
+        .from_input>input, .from_input>select {
+            padding: 10px 20px;
+            outline: none;
+            font-size: 17px;
+            background-color: transparent;
+            border: 1px solid #bbbbbb;
+            color: #e3e3e3;
+        }
+        option {
+            color: black;
+        }
+        .Order_btn {
+            padding: 10px 20px;
+            font-size: 17px;
+            background-color: #e07e22;
+            color: white;
+            border: 1px solid #e07e22;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .from_input>h3 {
+            color: white;
+            font-weight: 400;
+            font-size: 20px;
+        }
+        .Size {
+            display: flex;
+            column-gap: 10px;
+            margin-bottom: 10px;
+            color: white;
+        }
+        .Order_btn:hover {
+            background-color: white;
+            color: black;
+        }
+        /*footer section*/
+        .footer {
+            background-color: black;
+            margin-top: 50px;
+            padding: 50px 0px;
+
+        }
+        .footer_container {
+            display: flex;
+            justify-content: space-between;
+
+        }
+        .footer_item {
+            width: 30%;
+            font-family: Segoe UI;
+
+        }
+        .footer_item>h1 {
+            margin-bottom: 16px;
+        }
+        .footer_item>p {
+            color: white;
+            margin-bottom: 16px;
+
+        }
+        .footer_item>a {
+            text-decoration: none;
+            color: skyblue;
+        }
+        .footer_title {
+            font-size: 17px;
+            color: grey;
+            margin-bottom: 16px;
+        }
+        .footer_item>ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 10px;
+        }
+        .footer_item>ul>li {
+            color: white;
+            cursor: pointer;
+
+        }
+        .map {
+            width: 100%;
+            height: 200px;
+        }
+        .social {
+            width: 100%;
+            margin-top: 20px;
+            display: flex;
+            column-gap: 10px;
+        }
+        .social_link {
+            height: 40px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: 1px solid white;
+            color: white;
+            cursor: pointer;
+        }
+        .social_link:hover {
+            border: 1px solid white;
+            background-color: white;
+            color: black;
+        }
+        .social_link>i {
+            font-size: 20px;
+        }
+        .footer-bottom {
+            background-color: black;
+            border-top-color: 1px solid grey;
+        }
+        .footer-bottom-container {
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Segoe UI;
+            color: white;
+        }
+        .fixed-midia {
+            position: fixed;
+            top: 40%;
+            z-index: 100;
+        }
+        .fixed_icon {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .fixed_icon>i {
+            color: white;
+            font-size: 25px;
+        }
+        .insta {
+            background-color: #ff424b;
+            border-radius: 50%;
+        }
+        .insta:hover{
+            padding-left: 30px;
+        }
+        .facebook{
+            background-color: #3649b4;
+            border-radius: 50%;
+        }
+        .facebook:hover{
+            position: relative;
+            left: 50px;
+        }
+        .twitter{
+            background-color: skyblue;
+            border-radius:50%;
+        }
+
+    </style>
+    <!--header section-->
+    <header class="container_flued header">
+        <div class="container header-container">
+            <div class="logo">
+                <h1 class="logo_title logo_title1"><span>S</span><span class="span2">h</span>op pe</h1>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li class="home"> Home </li>
+                    <li class="about"> About </li>
+                    <li class="Catagary"> Catagary </li>
+                    <li class="cart"> Cart </li>
+                    <li class="header_btn"> Order Now </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!--Banner section-->
+    <section class=" banner">
+        <div class="container banner-container">
+            <div class="banner-info">
+                <h1>Get your hands on amazing products</h1> <button class="banner-btn">Shoping Now</button>
+            </div>
+            <div class="banner-bg">
+            </div>
+        </div>
+    </section>
+    <!--Porduct section-->
+    <section class="container_flued product">
+        <div class="container product-container">
+            <h1 class="title">Our Products</h1>
+            <div class="card-container">
+                <div class="items">
+                    <div class="item_deatails">
+                        <h1>black t-shirt</h1>
+                        <p>
+                            Good Quality product
+                        </p>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="item_deatails">
+                        <h1> shirt</h1>
+                        <p>
+                            Good Quality Shirt for mens
+                        </p>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="item_deatails">
+                        <h1>white t-shirt</h1>
+                        <p>
+                            Good Quality product
+                        </p>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="item_deatails">
+                        <h1>shirts</h1>
+                        <p>
+                            Good Quality product
+                        </p>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="item_deatails">
+                        <h1>Formal Wear</h1>
+                        <p>
+                            Good Quality product
+                        </p>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="item_deatails">
+                        <h1>Red Shirt</h1>
+                        <p>
+                            Good Quality product
+                        </p>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="item_deatails">
+                        <h1>blue shirt</h1>
+                        <p>
+                            Good Quality product
+                        </p>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="item_deatails">
+                        <h1>white shirt</h1>
+                        <p>
+                            Good Quality product
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--trending section-->
+    <section class="container_flued trending">
+        <div class="gallary gal_1">
+            <div class="gal_img">
+                <img src="gal_1.png">
+            </div>
+            <div class="gal_details">
+                <h2>The ultimate Summer Fation is Here</h2>
+                <p>
+                    product Quality Products is here
+                </p>
+                <button>Explore Now</button>
+            </div>
+        </div>
+        <div class="gallary gal_2">
+            <div class="gal_img">
+                <img src="gal_2.png">
+            </div>
+            <div class="gal_details">
+                <h2>The ultimate Summer Fation is Here</h2>
+                <p>
+                    product Quality Products is here
+                </p>
+                <button>Explore Now</button>
+            </div>
+        </div>
+        <div class="gallary gal_3">
+            <div class="gal_img">
+                <img src="gal_3.png">
+            </div>
+            <div class="gal_details">
+                <h2>The ultimate Summer Fation is Here</h2>
+                <p>
+                    product Quality Products is here
+                </p>
+                <button>Explore Now</button>
+            </div>
+        </div>
+        <div class="gallary gal_4">
+            <div class="gal_img">
+                <img src="gal_1.png">
+            </div>
+            <div class="gal_details">
+                <h2>The ultimate Summer Fation is Here</h2>
+                <p>
+                    product Quality Products is here
+                </p>
+                <button>Explore Now</button>
+            </div>
+        </div>
+    </section>
+    <!--form section-->
+    <section class="container_flued form">
+        <div class="form_container">
+            <h1 class="title">Form</h1>
+            <form class="from_input">
+                <input type="text" placeholder="Enter your name">
+                <input type="email" placeholder="Enter your email">
+                <input type="tel" placeholder="enter number">
+                <input type="text" placeholder="Enter your address">
+                <h3>Size</h3>
+                <div class="size">
+                    <div>
+                        <label>S</label>
+                        <input type="radio" name="size">
+                    </div>
+                    <div>
+                        <label>M</label>
+                        <input type="radio" name="size">
+                    </div>
+                    <div>
+                        <label>XL</label>
+                        <input type="radio"
+                        name="size">
+
+                    </div>
+                </div>
+                <select>
+                    <option>Select Payment Methods</option>
+                    <option>UPI</option>
+                    <option>Debit card</option>
+                    <option>Credit card</option>
+                    <option>Net Banking</option>
+                </select>
+                <button class="Order_btn">Order Now</button>
+            </form>
+        </div>
+    </section>
+    <!--footer section-->
+    <section class="container_flued footer">
+        <div class="container footer_container">
+            <div class="footer_item">
+                <h1 class="logo_title"><span>Sh</span>op Pe</h1>
+                <p>
+                    follow me on twitter instagram, facebook for more information about our Products and services
+                </p>
+                <a href="">read more</a>
+                <div class="social">
+                    <div class="social_link">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </div>
+                    <div class="social_link">
+                        <i class="fa-brands fa-twitter"></i>
+                    </div>
+                    <div class="social_link">
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                    <div class="social_link">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_item">
+                <h2 class="footer_title">Quick links</h2>
+                <ul>
+                    <li>home</li>
+                    <li>about</li>
+                    <li>Catagary</li>
+                    <li>Cart</li>
+                    <li>Order now</li>
+                </ul>
+            </div>
+            <div class="footer_item">
+                <h2 class="footer_title">
+                    address</h2>
+                <p>
+                    At wakeshawar tah Bhiwapur<br>Dist Nagpur, state Maharashtra 441201
+                </p>
+                <p>
+                    <strong>Email:</strong>sangharshgajbhiye31@gmail.com
+                </p>
+                <p>
+                    <strong>Contact:</strong>+91 9834767223
+                </p>
+            </div>
+            <div class="footer_item">
+                <h1 class="footer_title">Location</h1>
+                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2965.0824050173574!2d-93.63905729999999!3d41.998507000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sWebFilings%2C+University+Boulevard%2C+Ames%2C+IA!5e0!3m2!1sen!2sus!4v1390839289319" width="100%"></iframe>
+            </div>
+        </div>
+    </section>
+    <section class="container_flued footer-bottom">
+        <div class="container footer-bottom-container">
+            <p>
+                copyright@2023 all rights reserved desined and maneged by sangharsh gajbhiye
+            </p>
+        </div>
+    </section>
+    <div class="fixed-midia">
+        <a href="https://www.instagram.com/gajbhiye.sangharsh/" class="fixed_icon insta">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="" class="fixed_icon facebook">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a href="" class="fixed_icon twitter">
+            <i class="fa-brands fa-twitter"></i>
+        </a>
+
+    </div>
+</body>
+</html>
